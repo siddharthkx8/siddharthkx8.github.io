@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Khajanchee - Filmmaker's Manifesto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --text-light: #ffffff;
+            --text-grey: #b0b0b0;
+            --text-dull-grey: #777777;
+            --accent-blue: #87CEEB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Intro Section */
+        .intro {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-dull-grey);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 1rem;
+            color: var(--text-grey);
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.9);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+
+        .section-content p {
+            color: var(--text-grey);
+            font-weight: 400;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: width 0.5s ease;
+        }
+
+        .section-title.animated::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                gap: 1rem;
+            }
+            
+            .section-content {
+                max-width: 100%;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Section -->
+    <section class="intro">
+        <h1 class="name">Siddharth Khajanchee</h1>
+        <h2 class="title">Film Director</h2>
+        <div class="scroll-indicator">Scroll to Explore ↓</div>
+    </section>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#values" class="nav-link">Values</a>
+            <a href="#truths" class="nav-link">Truths</a>
+            <a href="#pursuit" class="nav-link">Pursuit</a>
+            <a href="#ideal-world" class="nav-link">Ideal World</a>
+            <a href="#ideal-life" class="nav-link">Ideal Life</a>
+            <a href="#world-shaping" class="nav-link">World Shaping</a>
+            <a href="#world-vision" class="nav-link">World Vision</a>
+        </div>
+    </nav>
+
+    <!-- Rest of the content remains the same as in the previous artifact -->
+    <section id="values" class="section">
+        <div class="section-content">
+            <h2 class="section-title">My Values?</h2>
+            <p>I am a focused and creative filmmaker with a unique approach to storytelling that blends playful inventiveness with quiet introspection. My work is rooted in a deep passion for capturing the subtleties of human experience, often infused with humor and charm that bring my films to life in unexpected ways. I believe that great cinema is not just about what's seen on screen, but the feeling it evokes—a sense of connection, confidence, and discovery. My shooting style is distinctive, reflecting my love for exploring new perspectives and finding solutions that elevate the narrative. With each project, I strive to bring something fresh and authentic to the table, creating stories that resonate and stay with you long after the credits roll.</p>
+        </div>
+    </section>
+
+    <!-- Remaining sections... (as in the previous artifact) -->
+    <section id="truths" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Truths I Hold Most Sacred?</h2>
+            <p>I believe in finding the sweet spot between creativity and authenticity, where balance is key. In a world often focused on quantity, I prioritize quality—crafting films that dive deep into new topics and dynamic storytelling. My approach is rooted in a progressive mindset that seeks to push boundaries while maintaining a grounded sense of purpose. I'm drawn to the uncharted, the unexplored ideas that challenge conventional thinking and spark meaningful conversations. Each project I take on is a step towards refining my craft, always looking for fresh perspectives and inventive solutions that breathe new life into the medium. Film, for me, is more than just a visual experience; it's an evolving dialogue that captures the essence of the moment and invites audiences into a deeper, more thoughtful world.</p>
+        </div>
+    </section>
+
+    <section id="pursuit" class="section">
+        <div class="section-content">
+            <h2 class="section-title">What Am I Truly in Pursuit Of?</h2>
+            <p>At the heart of my filmmaking is the belief in the power of improvisation—where spontaneity and intention intersect to create moments of genuine connection. I strive to explore themes of unity, love, and purpose, using film as a platform to shed light on the truths that bind us together.</p>
+        </div>
+    </section>
+
+    <section id="ideal-world" class="section">
+        <div class="section-content">
+            <h2 class="section-title">What Does My Ideal World Look Like?</h2>
+            <p>As a filmmaker, I'm driven by the vision of an ideal world—a world where creativity and connection bridge divides, where stories have the power to inspire change and spark understanding. My work is an exploration of unity, blending bold idealism with the grounded realities we navigate every day.</p>
+        </div>
+    </section>
+
+    <section id="ideal-life" class="section">
+        <div class="section-content">
+            <h2 class="section-title">What Does My Ideal Life Look Like?</h2>
+            <p>Filmmaking has had a profound effect on my life, shaping the way I see the world and my role in it. Through storytelling, I've come to understand the power of change—how a single narrative can spark shifts in perspective and open doors to new possibilities.</p>
+        </div>
+    </section>
+
+    <section id="world-shaping" class="section">
+        <div class="section-content">
+            <h2 class="section-title">What Kind of World Am I Trying to Shape for Myself?</h2>
+            <p>I approach my craft with a deep sense of optimism and a positive attitude, believing that stories have the power to foster understanding and bring about meaningful change. Through each project, I strive to create work that not only entertains but also invites reflection.</p>
+        </div>
+    </section>
+
+    <section id="world-vision" class="section">
+        <div class="section-content">
+            <h2 class="section-title">What Kind of World Do I Envision for Those Around Me?</h2>
+            <p>Through my work, I aim to cultivate optimism and a positive attitude, believing that film has the power to foster deeper understanding and meaningful connections. I approach each project with quiet introspection, seeking to explore and reflect the complexities of human experience.</p>
+        </div>
+    </section>
+
+    <script>
+        // Typewriter and Intersection Observer Effects
+        const sections = document.querySelectorAll('.section');
+        const options = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const title = entry.target.querySelector('.section-title');
+                    title.classList.add('animated');
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll Indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('#values').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
